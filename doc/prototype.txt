@@ -85,14 +85,16 @@ Also available via git: http://github.com/tomtom/vimtlib/
 ========================================================================
 Contents~
 
-        prototype#New ................... |prototype#New()|
-        prototype#Keys .................. |prototype#Keys()|
-        prototype#AsDictionary .......... |prototype#AsDictionary()|
-        prototype#AsList ................ |prototype#AsList()|
-        prototype#AsVim ................. |prototype#AsVim()|
-        prototype#strict#New ............ |prototype#strict#New()|
-        prototype#strict#Validate ....... |prototype#strict#Validate()|
-        prototype#strict#Clone .......... |prototype#strict#Clone()|
+        prototype#New .................... |prototype#New()|
+        prototype#Keys ................... |prototype#Keys()|
+        prototype#AsDictionary ........... |prototype#AsDictionary()|
+        prototype#AsList ................. |prototype#AsList()|
+        prototype#AsVim .................. |prototype#AsVim()|
+        prototype#binding#New ............ |prototype#binding#New()|
+        :Binding ......................... |:Binding|
+        prototype#strict#New ............. |prototype#strict#New()|
+        prototype#strict#Validate ........ |prototype#strict#Validate()|
+        prototype#strict#Clone ........... |prototype#strict#Clone()|
 
 
 ========================================================================
@@ -131,6 +133,33 @@ prototype#AsList(obj, ?default="")
 prototype#AsVim(obj)
     Return an executable string that represents the dictionary as 
     vimscript code.
+
+
+========================================================================
+autoload/prototype/binding.vim~
+
+                                                    *prototype#binding#New()*
+prototype#binding#New(bindings)
+
+                                                    *:Binding*
+Binding NAME = VARS...
+    Define a binding object.
+    RESTRICTIONS: NAME cannot be script-local.
+    
+    Example:
+        let x = 2
+        Binding foo = x
+        function! foo._(a) dict
+             return a:a * self.x
+        endf
+        echom foo._(10)
+        => 20
+    
+        function! Bar(binding)
+             exec prototype#AsVim(a:binding) .'| return x'
+        endf
+        echom Bar(foo)
+        => 20
 
 
 ========================================================================
