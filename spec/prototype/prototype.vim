@@ -2,8 +2,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-02-26.
-" @Last Change: 2010-03-01.
-" @Revision:    244
+" @Last Change: 2010-08-12.
+" @Revision:    245
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -192,6 +192,7 @@ function! x.__Default(n) dict
 endfunction
 Should be equal map(range(0, 10), 'x.__Get(v:val)'),
             \ [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+Should be equal x.__Get(10), 55
 Should be equal ncalls, 11
 Should be equal map(prototype#Keys(x, 1), 'x.__Get(v:val)'),
             \ [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
