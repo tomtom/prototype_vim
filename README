@@ -1,5 +1,3 @@
-*prototype.txt*  JavaScript-like prototype-based programming in vimscript
-
 prototype leverages vimscript's |dictionary-function|s to enable 
 JavaScript-like prototype-based programming.
 
