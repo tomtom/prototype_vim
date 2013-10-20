@@ -1,10 +1,10 @@
 " @Author:      Tom Link (micathom AT gmail com?subject=[vim])
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
-" @GIT:         http://github.com/tomtom/vimtlib/
+" @GIT:         http://github.com/tomtom/prototype_vim/
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-02-26.
-" @Last Change: 2010-03-02.
-" @Revision:    354
+" @Last Change: 2010-10-24.
+" @Revision:    355
 " GetLatestVimScripts: 0 0 prototype.vim
 
 let s:save_cpo = &cpo
